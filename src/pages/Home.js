@@ -1,14 +1,20 @@
 import { movies } from "../data";
+import MovieCard from '../components/MovieCard'
 
 function Home() {
-
   return (
     <>
       <header>
-        {/* What component should go here? */}
+        <h1>Home Page</h1>
       </header>
       <main>
-        {/* Info goes here! */}
+        { movies.map((movie) => {
+          return (
+            <MovieCard key={movie.title} title={movie.title} time={movie.time} genres={movie.genres}/>
+          )
+        })}
+       
+
       </main>
     </>
   );

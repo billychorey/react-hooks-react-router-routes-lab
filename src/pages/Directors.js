@@ -5,10 +5,24 @@ function Directors() {
   return (
     <>
       <header>
-        {/* What component should go here? */}
+        <h1>Directors Page</h1>
       </header>
       <main>
-        {/* Director info here! */}
+        {directors.map((director) => {
+          return(
+            <div key={director.name}>
+              <h3>Name: {director.name}</h3>
+              <span>Movies:</span>
+              <ul> 
+                {director.movies.map((movie) => {
+                  return(
+                    <li>{movie}</li>
+                  )
+                })}
+              </ul>
+            </div>
+          )
+        })}
       </main>
     </>
   );
